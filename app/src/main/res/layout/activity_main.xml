@@ -20,14 +20,31 @@
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|snap"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
+        
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#fff"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed" />
 
+    </android.support.design.widget.AppBarLayout>
+    
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/searchAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        
         <android.support.v7.widget.Toolbar
             android:id="@+id/searchToolBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#fff"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:visibility="gone">
+            app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <EditText
                 android:id="@+id/searchEditText"
@@ -38,17 +55,7 @@
                 android:textColorHint="#666" />
 
         </android.support.v7.widget.Toolbar>
-
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="#fff"
-            app:tabMaxWidth="0dp"
-            app:tabMode="fixed" />
-
+        
     </android.support.design.widget.AppBarLayout>
 
 
