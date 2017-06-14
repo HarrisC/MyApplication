@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-
                 if (searchAppBar.getVisibility() == View.VISIBLE)
                     exitReveal();
             }
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                getSupportActionBar().setTitle(tab.getText());
+
             }
         });
 
