@@ -46,10 +46,7 @@ public class MainActivity extends AppCompatActivity {
         searchToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                searchToolBar.setVisibility(View.GONE);
-                toolbar.setVisibility(View.VISIBLE);
-                tabLayout.setVisibility(View.VISIBLE);
-                Utils.hideKeyBoard(searchEditText);
+                exitReveal();
             }
         });
 
@@ -61,6 +58,25 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
 
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+
+                if (searchAppBar.getVisibility() == View.VISIBLE)
+                    exitReveal();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                getSupportActionBar().setTitle(tab.getText());
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -97,12 +113,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_settings:
                 return true;
             case R.id.action_search:
-                //toolbar.setVisibility(View.GONE);
-                //tabLayout.setVisibility(View.GONE);
-                //searchToolBar.setVisibility(View.VISIBLE);
                 enterReveal();
-                searchEditText.requestFocus();
-                Utils.showKeyBoard(searchEditText);
                 return true;
         }
 
@@ -113,11 +124,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         // if the searchToolBar is visible, hide it
         // otherwise, do parent onBackPressed method
-        if (searchToolBar.getVisibility() == View.VISIBLE) {
+        if (searchAppBar.getVisibility() == View.VISIBLE)
             exitReveal();
-        } else {
+        else
             super.onBackPressed();
-        }
     }
 
     private void enterReveal() {
