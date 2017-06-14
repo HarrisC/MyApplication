@@ -1,15 +1,16 @@
 package com.example.inspiron.myapplication;
 
-import android.app.Activity;
+import android.content.res.TypedArray;
 import android.support.v4.app.Fragment;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by inspiron on 13/6/2017.
@@ -17,6 +18,10 @@ import android.widget.TextView;
 
 public class Fragment1 extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
+    static TypedArray image;
+    static String[] name;
+    private static ListView listView;
+    private static List<ItemModel> list;
 
     private int mPage;
 
@@ -25,6 +30,7 @@ public class Fragment1 extends Fragment {
         args.putInt(ARG_PAGE, page);
         Fragment1 fragment = new Fragment1();
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -40,6 +46,27 @@ public class Fragment1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_page1, container, false);
         //TextView textView = (TextView) view;
         //textView.setText("Fragment #" + mPage);
+
+        list = new ArrayList<>();
+        image = view.getResources().obtainTypedArray(R.array.image_set);
+        name = view.getResources().getStringArray(R.array.name_set);
+
+        for (int i = 0; i < name.length; i++) {
+            ItemModel item = new ItemModel(image.getResourceId(i, -1), name[i]);
+            list.add(item);
+        }
+
+        listView = (ListView) view.findViewById(R.id.list);
+        ListViewAdapter adapter = new ListViewAdapter(getContext(), list);
+        listView.setAdapter(adapter);
+        image.recycle();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+
         return view;
     }
 }

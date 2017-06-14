@@ -3,4 +3,26 @@
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
     <string name="searchwithdot">Search...</string>
+
+    <array name="image_set">
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+    </array>
+
+    <string-array name="name_set">
+        <item>"tesing 1</item>
+        <item>"tesing 1</item>
+        <item>"tesing 1</item>
+        <item>"tesing 1</item>
+        <item>"tesing 1</item>
+        <item>"tesing 1</item>
+        <item>"tesing 1</item>
+        <item>"tesing 1</item>
+    </string-array>
 </resources>
