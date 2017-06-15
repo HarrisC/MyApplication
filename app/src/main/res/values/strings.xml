@@ -13,16 +13,20 @@
         <item>@android:drawable/ic_dialog_alert</item>
         <item>@android:drawable/ic_dialog_alert</item>
         <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
+        <item>@android:drawable/ic_dialog_alert</item>
     </array>
 
     <string-array name="name_set">
         <item>"tesing 1</item>
-        <item>"tesing 1</item>
-        <item>"tesing 1</item>
-        <item>"tesing 1</item>
-        <item>"tesing 1</item>
-        <item>"tesing 1</item>
-        <item>"tesing 1</item>
-        <item>"tesing 1</item>
+        <item>"tesing 2</item>
+        <item>"tesing 3</item>
+        <item>"tesing 4</item>
+        <item>"tesing 5</item>
+        <item>"tesing 6</item>
+        <item>"tesing 7</item>
+        <item>"tesing 8</item>
+        <item>"tesing 9</item>
+        <item>"tesing 10</item>
     </string-array>
 </resources>

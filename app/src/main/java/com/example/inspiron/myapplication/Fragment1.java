@@ -22,6 +22,7 @@ public class Fragment1 extends Fragment {
     static String[] name;
     private static ListView listView;
     private static List<ItemModel> list;
+    private View view;
 
     private int mPage;
 
@@ -43,9 +44,7 @@ public class Fragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_page1, container, false);
-        //TextView textView = (TextView) view;
-        //textView.setText("Fragment #" + mPage);
+        view = inflater.inflate(R.layout.fragment_page1, container, false);
 
         list = new ArrayList<>();
         image = view.getResources().obtainTypedArray(R.array.image_set);
