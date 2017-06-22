@@ -52,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:hint="@string/searchwithdot"
+                android:textColor="#000"
                 android:textColorHint="#666" />
 
         </android.support.v7.widget.Toolbar>

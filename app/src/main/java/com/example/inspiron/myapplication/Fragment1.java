@@ -3,6 +3,7 @@ package com.example.inspiron.myapplication;
 import android.content.res.TypedArray;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,13 +53,13 @@ public class Fragment1 extends Fragment {
 
         for (int i = 0; i < name.length; i++) {
             ItemModel item = new ItemModel(image.getResourceId(i, -1), name[i]);
+            Log.e("name", name[i]);
             list.add(item);
         }
 
         listView = (ListView) view.findViewById(R.id.list);
-        ListViewAdapter adapter = new ListViewAdapter(getContext(), list);
+        ListViewAdapter adapter = new ListViewAdapter(this.getContext(), list);
         listView.setAdapter(adapter);
-        image.recycle();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
